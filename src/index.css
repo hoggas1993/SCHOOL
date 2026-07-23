@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --cream: #F2F2F2;
+  --sand: #E5E7EB;
+  --charcoal: #081534;
+  --gold: #0A3EA6;
+  --gold-hover: #1747A6;
+  --purple-accent: #307CBF;
+  --brand-royal: #1C58A6;
+  --card-bg: #FFFFFF;
+}
+
+:root.dark {
+  --cream: #090E1A;          /* High-contrast dark background */
+  --sand: #1E293B;           /* Dark borders/subtle panels */
+  --charcoal: #F1F5F9;       /* Clean off-white text */
+  --gold: #38BDF8;           /* High-contrast bright cyan/blue for main CTAs */
+  --gold-hover: #0EA5E9;     /* Deep sky-blue hover */
+  --purple-accent: #F43F5E;  /* High-contrast bright rose accent */
+  --brand-royal: #0EA5E9;    /* High-contrast royal color */
+  --card-bg: #0F172A;        /* High-contrast deep slate card bg */
+}
+
+@theme {
+  --font-sans: "Inter", "Cairo", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Cairo", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  /* Theme mapping using the brand palette */
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-charcoal: var(--charcoal);
+  --color-gold: var(--gold);
+  --color-gold-hover: var(--gold-hover);
+  --color-purple-accent: var(--purple-accent);
+  
+  --color-brand-deep: var(--gold);
+  --color-brand-medium: var(--gold-hover);
+  --color-brand-royal: var(--brand-royal);
+  --color-brand-sky: var(--purple-accent);
+  --color-brand-light: var(--cream);
+}
+
+@layer base {
+  body {
+    background-color: var(--cream);
+    color: var(--charcoal);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+}
+
+/* Force high-contrast bg-white card elements to dark colors in dark mode */
+.dark .bg-white {
+  background-color: var(--card-bg) !important;
+}
+
+.dark .bg-white\/90 {
+  background-color: rgba(15, 23, 42, 0.9) !important;
+}
+
+.dark .bg-white\/80 {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+}
+
+/* Custom styles for high-fidelity interactive elements */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.glass-panel-dark {
+  background: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+

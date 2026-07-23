@@ -1,0 +1,6 @@
+{
+  "name": "Rafa School",
+  "description": "Une application bilingue élégante et interactive pour Rafa School, école de formation agréée par le Ministère de la Formation et de l'Enseignement Professionnels (Agrément N° 014/25) proposant des formations professionnelles certifiantes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
