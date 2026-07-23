@@ -1,0 +1,105 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "1. Cours (Courses)",
+    "description": "Gestion des cours de Rafa School"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "targetField": "titleFr",
+      "required": true
+    },
+    "titleAr": {
+      "type": "string",
+      "required": true
+    },
+    "titleFr": {
+      "type": "string",
+      "required": true
+    },
+    "descriptionAr": {
+      "type": "text"
+    },
+    "descriptionFr": {
+      "type": "text"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "crafts",
+        "tech",
+        "hse"
+      ],
+      "default": "crafts",
+      "required": true
+    },
+    "durationAr": {
+      "type": "string"
+    },
+    "durationFr": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "currencyAr": {
+      "type": "string",
+      "default": "دج"
+    },
+    "currencyFr": {
+      "type": "string",
+      "default": "DA"
+    },
+    "instructorId": {
+      "type": "enumeration",
+      "enum": [
+        "rachid",
+        "samira",
+        "mourad"
+      ],
+      "required": true
+    },
+    "lecturesCount": {
+      "type": "integer",
+      "default": 12
+    },
+    "levelAr": {
+      "type": "string"
+    },
+    "levelFr": {
+      "type": "string"
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#8b5cf6"
+    },
+    "detailsAr": {
+      "type": "text"
+    },
+    "detailsFr": {
+      "type": "text"
+    },
+    "tagsAr": {
+      "type": "json"
+    },
+    "tagsFr": {
+      "type": "json"
+    },
+    "lessons": {
+      "type": "json"
+    },
+    "image": {
+      "type": "string"
+    },
+    "bannerImage": {
+      "type": "string"
+    }
+  }
+}

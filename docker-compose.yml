@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  strapi:
+    build:
+      context: ./strapi-backend
+      dockerfile: Dockerfile
+    container_name: rafa-school-strapi
+    restart: always
+    environment:
+      NODE_ENV: production
+      PORT: 1337
+      HOST: 0.0.0.0
+      APP_KEYS: "Key1,Key2,Key3,Key4"
+      API_TOKEN_SALT: "salt_api_token_123"
+      ADMIN_JWT_SECRET: "admin_jwt_secret_123"
+      TRANSFER_TOKEN_SALT: "transfer_token_salt_123"
+      JWT_SECRET: "jwt_secret_123"
+    ports:
+      - "1337:1337"
+    volumes:
+      - strapi-data:/opt/app/.tmp
+      - strapi-uploads:/opt/app/public/uploads
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rafa-school-web
+    restart: always
+    depends_on:
+      - strapi
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      STRAPI_API_URL: "http://strapi:1337"
+    ports:
+      - "3000:3000"
+
+volumes:
+  strapi-data:
+  strapi-uploads:

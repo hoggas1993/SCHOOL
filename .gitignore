@@ -6,3 +6,13 @@ coverage/
 *.log
 .env*
 !.env.example
+.tmp/
+.cache/
+
+# Strapi subfolder exclusions
+strapi-backend/node_modules/
+strapi-backend/build/
+strapi-backend/dist/
+strapi-backend/.tmp/
+strapi-backend/.cache/
+strapi-backend/public/uploads/

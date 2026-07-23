@@ -11,18 +11,20 @@ export default function Logo({ className = 'h-12 w-auto', isDark = false }: Logo
   // The website will try to load the user's uploaded image file directly!
   // They can place their image file at '/logo.png' (or '/logo-white.png' for dark backgrounds)
   // in their public directory. This satisfies using the image directly!
-  const imgSrc = isDark ? '/logo-white.png' : '/logo.png';
+  const imgSrc = '/logo.png';
 
   if (!imgError) {
     return (
-      <img
-        id={`rafa-school-img-logo-${isDark ? 'dark' : 'light'}`}
-        src={imgSrc}
-        alt="Rafa School Logo"
-        className={`${className} object-contain`}
-        onError={() => setImgError(true)}
-        referrerPolicy="no-referrer"
-      />
+      <div className={`inline-flex items-center justify-center ${isDark ? 'bg-white/95 p-1.5 rounded-lg shadow-sm' : ''}`}>
+        <img
+          id={`rafa-school-img-logo-${isDark ? 'dark' : 'light'}`}
+          src={imgSrc}
+          alt="Rafa School Logo"
+          className={`${className} object-contain`}
+          onError={() => setImgError(true)}
+          referrerPolicy="no-referrer"
+        />
+      </div>
     );
   }
 

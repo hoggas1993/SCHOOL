@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "registrations",
+  "info": {
+    "singularName": "registration",
+    "pluralName": "registrations",
+    "displayName": "3. Inscriptions (Registrations)",
+    "description": "Données des formulaires d'inscriptions soumis"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "fullName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "courseId": {
+      "type": "string",
+      "required": true
+    },
+    "experienceLevel": {
+      "type": "string"
+    },
+    "preferredSchedule": {
+      "type": "string"
+    }
+  }
+}
