@@ -1,12 +1,12 @@
 # Dockerfile for Strapi CMS v5
 FROM node:20-alpine AS builder
 
-# Installing libtool, automake, autoconf, and g++ for native modules like better-sqlite3
-RUN apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev > /dev/null 2>&1
+# Install python3, make, g++, and native build tools for sharp & better-sqlite3
+RUN apk add --no-cache python3 make g++ build-base gcc autoconf automake zlib-dev libpng-dev vips-dev
 
 WORKDIR /opt/app
 COPY package*.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 COPY . .
 ENV NODE_ENV=production
