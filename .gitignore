@@ -11,6 +11,8 @@ coverage/
 deploy_vps.py
 setup_domain.py
 activate_ssl.py
+verify_vps_token.py
+reset_and_seed_vps_strapi.py
 
 # Strapi subfolder exclusions
 strapi-backend/node_modules/
