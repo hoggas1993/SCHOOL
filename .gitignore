@@ -9,6 +9,8 @@ coverage/
 .tmp/
 .cache/
 deploy_vps.py
+setup_domain.py
+activate_ssl.py
 
 # Strapi subfolder exclusions
 strapi-backend/node_modules/
