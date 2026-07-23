@@ -5,8 +5,11 @@ FROM node:20-alpine AS builder
 RUN apk add --no-cache python3 make g++ build-base gcc autoconf automake zlib-dev libpng-dev vips-dev
 
 WORKDIR /opt/app
+
+ENV SHARP_IGNORE_GLOBAL_LIBVIPS=1
+
 COPY package*.json ./
-RUN npm install --legacy-peer-deps
+RUN npm install
 
 COPY . .
 ENV NODE_ENV=production
